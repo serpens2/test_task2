@@ -34,7 +34,7 @@ def init_db():
             )
             db.add(admin_user)
             db.commit()
-        if not db.query(models.User).filter_by(email="my_emai@mail.ru").first():
+        if not db.query(models.User).filter_by(email="my_email@mail.ru").first():
             user_password_hash = bcrypt.hashpw('qwerty'.encode("utf-8"), bcrypt.gensalt()).decode("utf-8")
             test_user = models.User(
                 email="my_email@mail.ru",
